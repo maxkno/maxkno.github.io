@@ -83,8 +83,8 @@ Field = function(xs,w,i0,j0,it,jt){
 	
 	if(this.finished){
 	    image(this.imgs.figur,this.cj*this.w,this.ci*this.w,this.w,this.w);
-	    stoke(255,0,0);
-	    strokeWeight(2),
+	    //stoke(255,0,0);
+	    //strokeWeight(2),
 	    /*
 	    noStroke();
 	    fill(0,0,255);
