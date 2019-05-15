@@ -2,6 +2,7 @@ var c_size = 910;
 var size = 10;
 var w;
 var count = 0;
+var all = false;
 
 var field;
 
@@ -13,9 +14,8 @@ function setup() {
 }
 
 function draw() {
-    //frameRate(2);
-    background(255);
-    field.show();
+    background(0);
+    field.show(all);
     
     if(!field.finished){
 	field.update();
@@ -63,3 +63,9 @@ function keyPressed() {
     }
 }
 
+function keyTyped() {
+    if (key === 'i') {
+	all = !all;
+	redraw();
+    }
+}
