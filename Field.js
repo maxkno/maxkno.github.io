@@ -100,12 +100,12 @@ Field = function(xs,w,i0,j0,it,jt){
 	    //fill();
 	    strokeWeight(dicke);
 
-	    for(var ii = 0; ii < 200; ii++){
-		stroke(0,5);
-		circle((this.cj + 0.5)*this.w,(this.ci + 0.5)* this.w, (1 + 2.0/200 * ii)*this.w + dicke*1.0 / 2);		
+	    for(var ii = 0; ii < 50; ii++){
+		stroke(0,20);
+		circle((this.cj + 0.5)*this.w,(this.ci + 0.5)* this.w, (1 + 2.0/50 * ii)*this.w + dicke*1.0 / 2);		
 	    }
  	    
-
+	    stroke(0);
 	    strokeWeight(dicke);
 	    circle((this.cj + 0.5)*this.w,(this.ci + 0.5)* this.w, 3.0*this.w + dicke*1.0 / 2);
 	    
