@@ -1,4 +1,4 @@
-var c_size = 810;
+var c_size = 910;
 var size = 10;
 var w;
 
@@ -12,6 +12,7 @@ function setup() {
 }
 
 function draw() {
+    //frameRate(2);
     background(220);
 
     field.show();

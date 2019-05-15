@@ -7,10 +7,10 @@ Field = function(xs,w,i0,j0,it,jt){
     this.firsttime = true;
     this.finished = false;
     this.won = false;
-    
+
     this.ci = i0;
     this.cj = j0;
-  
+
     this.si = i0;
     this.sj = j0;
 
@@ -58,7 +58,7 @@ Field = function(xs,w,i0,j0,it,jt){
     }
 
     this.play = function(){
-	if(this.ci == this.ti && this.cj == this.tj){
+	if(this.ci == this.si && this.cj == this.sj){
 	    this.won = true;
 	}
     }
@@ -82,7 +82,35 @@ Field = function(xs,w,i0,j0,it,jt){
 	}
 	
 	if(this.finished){
-	    image(this.imgs.figur,this.cj*this.w,this.ci*this.w,this.w,this.w);
+	    // 40 x 50 zu 70 x 70
+	    stroke(0);
+
+	    var dicke = 1000;
+	  
+	    
+	    noFill();
+	    
+	    
+	    //strokeWeight(dicke);
+	    //fill(0,0,0,-70);
+	    //circle((this.cj + 0.5)*this.w,(this.ci + 0.5)* this.w, 1.5*this.w );
+	    //ystrokeWeight(dicke);
+	    //blendMode(MULTIPLY);
+	    //blendMode(SOFT_LIGHT);
+	    //fill();
+	    strokeWeight(dicke);
+
+	    for(var ii = 0; ii < 200; ii++){
+		stroke(0,5);
+		circle((this.cj + 0.5)*this.w,(this.ci + 0.5)* this.w, (1 + 2.0/200 * ii)*this.w + dicke*1.0 / 2);		
+	    }
+ 	    
+
+	    strokeWeight(dicke);
+	    circle((this.cj + 0.5)*this.w,(this.ci + 0.5)* this.w, 3.0*this.w + dicke*1.0 / 2);
+	    
+	    image(this.imgs.figur,(this.cj+1.5/7)*this.w,(this.ci+1.0/7)*this.w,this.w*4.0/7,this.w*5.0/7);
+	    //blendMode(ADD);
 	    //stoke(255,0,0);
 	    //strokeWeight(2),
 	    /*
@@ -192,8 +220,8 @@ Field = function(xs,w,i0,j0,it,jt){
 		    this.ci = curr.i;
 		}
 		else if (this.finished == false && this.ci != this.ti && this.cj != this.tj){
-		    this.ci = this.si;
-		    this.cj = this.sj;
+		    this.ci = this.ti;
+		    this.cj = this.tj;
 		    this.finished = true;
 		}
 	    }
